@@ -1,7 +1,7 @@
-describe('visenze website test', function () {
+describe('Visenze website test', function () {
     beforeEach(() => {
         cy
-            .visit('https://www.visenze.com/')
+            .visit('/')
             .title().should('include', 'Home')
     });
     it('Home page', function () {
@@ -10,8 +10,7 @@ describe('visenze website test', function () {
             .contains('Contact Us').click()
             .wait(1000)
             .get('input[name="firstname"]')
-            .type('fake name')
-            .should('have.value', 'fake name')
+            .type('fake name').should('have.value', 'fake name')
     });
     it('Go to Visual Commerce Platform tab', function () {
         cy
